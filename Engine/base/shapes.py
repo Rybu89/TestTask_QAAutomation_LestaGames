@@ -1,5 +1,6 @@
+import os
 import time
-from inscriptions import *
+from Engine.base.inscriptions import *
 
 
 class Shapes:
@@ -52,7 +53,7 @@ class DynamicShapes:
         pygame.draw.rect(new_surface, color=self.color, rect=[40, 20, 50, 50])
         Inscriptions(
             surface=new_surface,
-            font='Roboto-Black.ttf',
+            font=os.getcwd() +'\\Roboto-Black.ttf',
             font_size=35,
             text=f"Drawing Rectangle:{self.color}",
             color=self.color,
@@ -69,7 +70,7 @@ class DynamicShapes:
         pygame.draw.polygon(surface=new_surface, color=self.color, points=[(190, 70), (250, 70), (220, 20)])
         Inscriptions(
             surface=new_surface,
-            font='Roboto-Black.ttf',
+            font=os.getcwd() +'\\Roboto-Black.ttf',
             font_size=35,
             text=f"Drawing Triangle:{self.color}",
             color=self.color,
@@ -86,7 +87,7 @@ class DynamicShapes:
         pygame.draw.circle(new_surface, color=self.color, center=(140, 45), radius=25)
         Inscriptions(
             surface=new_surface,
-            font='Roboto-Black.ttf',
+            font=os.getcwd() +'\\Roboto-Black.ttf',
             font_size=35,
             text=f"Drawing Circle:{self.color}",
             color=self.color,

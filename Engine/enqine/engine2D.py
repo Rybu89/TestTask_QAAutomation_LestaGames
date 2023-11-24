@@ -1,7 +1,6 @@
-import engine2D.base.shapes
-import engine2D.base.windows
-import engine2D.base.inscriptions
-
+from Engine.base.windows import *
+from Engine.base.shapes import *
+from Engine.base.inscriptions import *
 
 class Engine2D:
 
@@ -35,9 +34,9 @@ class Engine2D:
                     surface - слой для отрисовки текста (Str)
         """
 
-        text_static_figures = engine2D.base.inscriptions.Inscriptions(
+        text_static_figures = Inscriptions(
             surface=surface,
-            font='Poppins-Medium.ttf',
+            font=os.getcwd()+'\\Roboto-Black.ttf',
             font_size=25,
             text='To draw a shape, press " 1 ".',
             color='Red',
@@ -53,9 +52,9 @@ class Engine2D:
                     surface - слой для отрисовки текста (Str)
         """
 
-        text_dynamic_figures = engine2D.base.inscriptions.Inscriptions(
+        text_dynamic_figures = Inscriptions(
             surface=surface,
-            font='Poppins-Medium.ttf',
+            font=os.getcwd() +'\\Roboto-Black.ttf',
             font_size=18,
             text='Select the color of the shapes, press: 2-"Orange"; 3-"Blue"; 4-"Green".',
             color='Red',
@@ -66,16 +65,16 @@ class Engine2D:
     @staticmethod
     def choose_color_of_dynamic_figures(color, call_key):
 
-        if call_key[engine2D.base.inscriptions.engine2D.base.inscriptions.pygame.K_2]:
+        if call_key[pygame.K_2]:
             color = "Orange"
-        elif call_key[engine2D.base.inscriptions.engine2D.base.inscriptions.pygame.K_3]:
+        elif call_key[pygame.K_3]:
             color = "Blue"
-        elif call_key[engine2D.base.inscriptions.engine2D.base.inscriptions.pygame.K_4]:
+        elif call_key[pygame.K_4]:
             color = "Green"
         return color
 
     @staticmethod
-    def create_dynamic_figures(color, surface, call_key):
+    def create_dynamic_figures(color, surface):
 
         DynamicShapes(surface, color).draw_rect()
         DynamicShapes(surface, color).draw_circle()

@@ -1,5 +1,5 @@
 import pygame
-from engine2D.enqine.engine2D import Engine2D
+from Engine.enqine.engine2D import *
 
 engine = Engine2D()
 
@@ -26,7 +26,7 @@ while run:
     if call_keys[pygame.K_2] or [pygame.K_3] or [pygame.K_4]:
         color_dynamic_figure = engine.choose_color_of_dynamic_figures(color_dynamic_figure, call_keys)
         if call_keys[pygame.K_1]:
-            engine.create_dynamic_figures(color_dynamic_figure, window, call_keys)
+            engine.create_dynamic_figures(color_dynamic_figure, window)
 
     pygame.display.update()
 
