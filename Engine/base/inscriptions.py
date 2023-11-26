@@ -18,3 +18,4 @@ class Inscriptions:
 
         font1 = pygame.font.Font(self.font, self.font_size).render(self.text, True, self.color)
         self.surface.blit(font1, (self.coordinate_x, self.coordinate_y))
+        return font1
