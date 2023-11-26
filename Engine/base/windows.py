@@ -5,7 +5,7 @@ class Windows:
         pass
 
     @staticmethod
-    def create_new_window(x, y, background_color, name):
+    def create_new_window(x, y, background_color=None, name=None):
         """ Метод создания окна с холстом"""
 
         new_window = pygame.display.set_mode((x, y))
