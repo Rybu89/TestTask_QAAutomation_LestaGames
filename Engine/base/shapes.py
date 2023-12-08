@@ -9,6 +9,8 @@ class Shapes:
     def __init__(self, layer, color):
         self.layer = layer
         self.color = color
+    def draw(self):
+        pass
 
 class Rectangle(Shapes):
     """ Создание прямоугольника. """
@@ -20,12 +22,13 @@ class Rectangle(Shapes):
     def draw(self):
         pygame.draw.rect(surface=self.layer, color=self.color, rect=self.coordinates)
 
-class Circle(Rectangle):
+class Circle(Shapes):
     """ Создание окружности. """
 
     def __init__(self, layer, color, coordinates, radius):
-        super().__init__(layer, color, coordinates)
+        super().__init__(layer, color)
         self.radius = radius
+        self.coordinates = coordinates
 
     def draw(self):
         pygame.draw.circle(surface=self.layer, color=self.color, center=self.coordinates, radius=self.radius)
@@ -53,7 +56,7 @@ class DynamicShapes:
         pygame.draw.rect(new_surface, color=self.color, rect=[40, 20, 50, 50])
         Inscriptions(
             surface=new_surface,
-            font=os.getcwd() +'\\Roboto-Black.ttf',
+            font=(os.getcwd()+'\\..') +'\\recources\\Roboto_Black.ttf',
             font_size=35,
             text=f"Drawing Rectangle:{self.color}",
             color=self.color,
@@ -63,6 +66,7 @@ class DynamicShapes:
         self.layer.blit(new_surface, (100, 200))
         pygame.display.update()
         time.sleep(0.5)
+        return new_surface
 
     def draw_triangle(self):
         new_surface = pygame.Surface((600, 300))
@@ -70,7 +74,7 @@ class DynamicShapes:
         pygame.draw.polygon(surface=new_surface, color=self.color, points=[(190, 70), (250, 70), (220, 20)])
         Inscriptions(
             surface=new_surface,
-            font=os.getcwd() +'\\Roboto-Black.ttf',
+            font=(os.getcwd()+'\\..') +'\\recources\\Roboto_Black.ttf',
             font_size=35,
             text=f"Drawing Triangle:{self.color}",
             color=self.color,
@@ -80,14 +84,14 @@ class DynamicShapes:
         self.layer.blit(new_surface, (100, 200))
         pygame.display.update()
         time.sleep(0.5)
-
+        return new_surface
     def draw_circle(self):
         new_surface = pygame.Surface((600, 300))
         new_surface.fill('White')
         pygame.draw.circle(new_surface, color=self.color, center=(140, 45), radius=25)
         Inscriptions(
             surface=new_surface,
-            font=os.getcwd() +'\\Roboto-Black.ttf',
+            font=(os.getcwd()+'\\..') +'\\recources\\Roboto_Black.ttf',
             font_size=35,
             text=f"Drawing Circle:{self.color}",
             color=self.color,
@@ -97,6 +101,7 @@ class DynamicShapes:
         self.layer.blit(new_surface, (100, 200))
         pygame.display.update()
         time.sleep(0.5)
+        return new_surface
 
     def clear(self):
         new_surface = pygame.Surface((600, 300))

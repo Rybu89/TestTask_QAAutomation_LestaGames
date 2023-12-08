@@ -36,7 +36,7 @@ class Engine2D:
 
         text_static_figures = Inscriptions(
             surface=surface,
-            font=os.getcwd()+'\\Roboto-Black.ttf',
+            font=(os.getcwd()+'\\..') +'\\recources\\Roboto_Black.ttf',
             font_size=25,
             text='To draw a shape, press " 1 ".',
             color='Red',
@@ -54,7 +54,7 @@ class Engine2D:
 
         text_dynamic_figures = Inscriptions(
             surface=surface,
-            font=os.getcwd() +'\\Roboto-Black.ttf',
+            font=(os.getcwd()+'\\..') +'\\recources\\Roboto_Black.ttf',
             font_size=18,
             text='Select the color of the shapes, press: 2-"Orange"; 3-"Blue"; 4-"Green".',
             color='Red',

@@ -20,5 +20,3 @@ def from_tests():
     print('\n START TEST')
     yield
     print('\n FINISH TEST')
-
-
